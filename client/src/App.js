@@ -2,14 +2,6 @@ import React from 'react';
 import './App.css';
 import Jobs from "../src/Components/Jobs";
 
-// production
-// let JOB_API_URL;
-// if (process.env.NODE_ENV === 'production') {
-//    JOB_API_URL = '/jobs';
-// }
-// else {
-//   JOB_API_URL = 'http://localhost:3001/jobs';
-// }
 let JOB_API_URL = '/jobs';
 
 // dev
@@ -17,8 +9,6 @@ let JOB_API_URL = '/jobs';
 // fetch jobs by our api
 async function JobFetch(updateCb) {
   const res = await fetch(JOB_API_URL)
-  // .then(res => res.text())
-  // .then(text => {console.log(text), updateCb(text)});
   const json = await res.json();
   console.log(json)
   updateCb(json);

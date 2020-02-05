@@ -25,9 +25,6 @@ async function fetchStackoverflow() {
         while (allJobs.length === 0) {
             let feed = await parser.parseURL(f);
             fullList.push(...feed.items);
-            // Array.prototype.push.apply(allJobs, jrJobs);
-
-            // console.log(fullList.length)
             feed.items.forEach(item => {
                 let newItem = {};
                 let location = '';
